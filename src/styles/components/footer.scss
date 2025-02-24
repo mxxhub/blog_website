@@ -1,0 +1,81 @@
+.footer {
+    @apply relative flex flex-col bg-[#0e1013] w-full pt-20 pb-6;
+    .footer-content {
+        @apply container mx-auto flex flex-row justify-between items-center px-20 pb-11;
+        .left-section-container {
+            @apply flex flex-col justify-center items-center gap-y-[5px];
+            img {
+                @apply mb-2;
+            }
+            p {
+                @apply text-white text-sm;
+            }
+        }
+        .right-section-container {
+            @apply mt-4 md:mt-0 text-center md:text-right;
+            li {
+                @apply text-white text-sm font-medium text-left underline underline-offset-8;
+            }
+        }
+    }
+    .copy-right-container {
+        @apply container mx-auto text-left text-white text-sm mt-6 pt-4 px-20;
+    }
+    .cookie-preferences {
+        @apply absolute bottom-0 left-20 z-50 h-6 text-white text-xs font-medium cursor-pointer;
+    }
+    .scroll-top-button {
+        @apply fixed bottom-6 right-6 z-50 h-14 w-14 bg-black rounded-full border-2 border-white hover:bg-white hover:text-black transition-all duration-300 ease-in-out;
+        &.show {
+            @apply opacity-100;
+        }
+        &.hide {
+            @apply opacity-0 pointer-events-none;
+        }
+        &::after {
+            font-family: 'squarespace-ui-font';
+            content: "\e006";
+            color: inherit;
+            font-size: 30px;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+.cookie-modal-body {
+    .modal-header {
+        @apply text-white text-2xl font-normal font-[futura-pt];
+    }
+    .modal-content {
+        @apply text-white py-6;
+        .content-item {
+            @apply flex justify-between items-center gap-12;
+            .item-title {
+                @apply font-medium text-base font-[futura-pt] mb-3;
+            }
+            .item-text {
+                @apply text-xs text-gray-400;
+            }
+            .action-container {
+                @apply flex items-center gap-2;
+                p {
+                    @apply text-xs;
+                }
+            }
+        }
+        hr {
+            @apply bg-white opacity-50 my-5;
+        }
+    }
+    button[type="button"].absolute {
+        @apply text-white;
+    }
+    .submit-btn {
+        @apply bg-white text-black text-xs rounded-full hover:text-white;
+    }
+}

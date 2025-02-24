@@ -1,0 +1,36 @@
+
+.contact {
+    @apply bg-[#0e1013] mt-[-1px];
+    .divider {
+        @apply bg-white w-full h-32;
+        .divider-content {
+            clip-path: polygon(50% 0%, 100% 0, 100% 90%, 100% 100%, 25% 12%, 0 100%, 0 0);   
+            @apply bg-[#08a885] w-full h-full;
+        }
+    }
+    .section-content {
+        clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 86%, 0 100%, 0 0);
+        @apply flex-col pt-36 pb-[480px] bg-white z-20 mt-[-1px];
+        .title {
+            @apply text-center whitespace-pre-wrap text-[#0e1013] !text-[2.8rem] font-[futura-pt];
+        }
+        .sub-title {
+            @apply text-[#0D2221] mt-4
+        }
+        .form-container {
+            @apply min-w-[700px];
+            .required-text {
+                @apply text-[17px] text-[#0e1013bb];
+                span {
+                    @apply text-sm text-[#0e1013aa] ml-1;
+                }
+            }
+            .submit-btn {
+                @apply bg-[#136452] text-white text-base font-semibold rounded-full px-6 py-6;
+            }
+            .error-alert {
+                @apply flex items-center gap-2 bg-[#ce2c30] text-white text-sm px-3 py-2.5 rounded-sm w-fit mt-2;
+            }
+        }
+    }
+}
