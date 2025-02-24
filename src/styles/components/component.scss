@@ -1,6 +1,6 @@
 .section {
     .default-btn {
-        @apply grid z-0 place-items-center px-16 py-5 text-lg font-medium text-white hover:text-black border-2 border-[#232931] rounded-full bg-[#232931] relative overflow-hidden h-fit;
+        @apply grid z-0 place-items-center px-16 py-5 text-lg font-medium text-white hover:text-black border-2 border-[#232931] rounded-full bg-[#232931] relative overflow-hidden h-fit max-md:py-3 max-md:px-32 max-lg:py-3;
 
         &:before {
             content: "";

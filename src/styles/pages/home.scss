@@ -1,7 +1,7 @@
 .section {
     @apply relative;
     .section-content {
-        @apply flex items-center justify-center;
+        @apply flex items-center justify-center max-md:flex-col max-xl:px-20;
     }
 }
 
@@ -9,15 +9,18 @@
     @apply bg-white z-30 mt-[-1px];
     .section-content {
         clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 86%, 0 100%, 0 0);
-        @apply relative bg-[#08a885] pt-32 pb-[390px];
+        @media (max-width: 1024px) {
+            clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 93%, 0 100%, 0 0);
+        }
+        @apply relative bg-[#08a885] pt-32 pb-[390px] max-md:flex-col-reverse max-md:pt-10 max-md:pb-72 max-lg:pb-80;
         .title {
-            @apply text-center whitespace-pre-wrap text-[#0e1013] text-[2.8rem] font-[futura-pt] max-w-[800px]
+            @apply text-center whitespace-pre-wrap text-[#0e1013] text-[2.8rem] font-[futura-pt] max-w-[800px] max-md:text-[2rem] max-md:leading-[1.5] max-lg:text-[2rem] max-xl:text-[2.5rem];
         }
         .home-img {
-            @apply -ml-40;
+            @apply -ml-40 max-md:ml-0 max-md:w-1/2 max-lg:w-1/2 max-lg:-ml-20 max-xl:w-4/5 max-xl:ml-0;
         }
         .section-action-container {
-            @apply absolute bottom-52;
+            @apply absolute bottom-52 max-md:bottom-28 max-lg:bottom-28;
         }
     }
 }
