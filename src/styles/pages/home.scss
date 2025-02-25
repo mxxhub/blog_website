@@ -1,7 +1,7 @@
 .section {
     @apply relative;
     .section-content {
-        @apply flex items-center justify-center max-md:flex-col max-sm:px-8 max-xl:px-20;
+        @apply flex items-center justify-center max-md:flex-col max-sm:px-8 max-xl:px-16;
     }
 }
 
@@ -9,8 +9,11 @@
     @apply bg-white z-30 mt-[-1px];
     .section-content {
         clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 86%, 0 100%, 0 0);
+        @media (max-width: 768px) {
+            clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 95%, 0 100%, 0 0);
+        }
         @media (max-width: 1024px) {
-            clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 93%, 0 100%, 0 0);
+            clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 92%, 0 100%, 0 0);
         }
         @apply relative bg-[#08a885] pt-32 pb-[390px] max-md:flex-col-reverse max-md:pt-10 max-md:pb-72 max-lg:pb-80;
         .title {
@@ -29,8 +32,11 @@
     @apply bg-[#08a885] z-20 mt-[-1px];
     .section-content {
         clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 86%, 0 100%, 0 0);
+        @media (max-width: 768px) {
+            clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 97%, 0 100%, 0 0);
+        }
         @media (max-width: 1024px) {
-            clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 93%, 0 100%, 0 0);
+            clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 95%, 0 100%, 0 0);
         }
         @apply pt-12 pb-72 bg-white gap-20 max-md:gap-12 max-xl:pb-60;
         .section-left-container {
@@ -58,11 +64,17 @@
     @apply bg-white z-10 mt-[-1px];
     .section-content {
         clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 86%, 0 100%, 0 0);
-        @apply pt-28 pb-[500px] bg-[#08a885] gap-28 items-start;
+        @media (max-width: 768px) {
+            clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 97%, 0 100%, 0 0);
+        }
+        @media (max-width: 1024px) {
+            clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 95%, 0 100%, 0 0);
+        }
+        @apply pt-28 pb-[500px] bg-[#08a885] gap-28 items-start max-md:pb-80 max-md:gap-20 max-md:items-center max-lg:gap-8 max-lg:pb-[400px];
         .section-left-container {
-            @apply max-w-[450px];
+            @apply max-w-[450px] max-md:max-w-full max-lg:max-w-[50%];
             .title {
-                @apply text-[4rem] text-[#0e1013] whitespace-pre-wrap font-[futura-pt]
+                @apply text-[4rem] text-[#0e1013] whitespace-pre-wrap font-[futura-pt] max-md:text-[3.5rem];
             }
             .sub-title {
                 @apply text-[17px] text-[#0D2221] whitespace-pre-wrap leading-7;
@@ -72,11 +84,11 @@
             }
         }
         .section-right-container {
-            @apply w-[460px] border-t-[5px] border-[#097760];
+            @apply max-w-[460px] border-t-[5px] border-[#097760] max-md:w-full max-md:max-w-full max-lg:max-w-[50%];
             .accordion-item {
                 @apply border-b-[5px] border-[#097760];
                 button {
-                    @apply text-[1.6rem] font-[futura-pt] font-medium hover:no-underline !py-3;
+                    @apply text-[1.6rem] font-[futura-pt] font-medium hover:no-underline !py-3 text-left;
                     svg {
                         @apply h-9 w-9;
                     }
@@ -87,9 +99,7 @@
             }
         }
         .section-action-container {
-            @apply absolute bottom-72;
-            .get-started-btn {
-            }
+            @apply absolute bottom-72 max-md:bottom-36 max-lg:bottom-44;
         }
     }
 }
@@ -98,6 +108,12 @@
     @apply bg-[#0e1013] mt-[-1px];
     .section-content {
         clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 86%, 0 100%, 0 0);
+        @media (max-width: 768px) {
+            clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 97%, 0 100%, 0 0);
+        }
+        @media (max-width: 1024px) {
+            clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 95%, 0 100%, 0 0);
+        }
         @apply flex-col pt-36 pb-72 bg-white;
         .title {
             @apply text-center whitespace-pre-wrap text-[#0e1013] !text-[2.2rem] font-[futura-pt];
