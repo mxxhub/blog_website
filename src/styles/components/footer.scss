@@ -1,7 +1,7 @@
 .footer {
-    @apply relative flex flex-col bg-[#0e1013] w-full pt-20 pb-6;
+    @apply relative flex flex-col bg-[#0e1013] w-full pt-20 pb-6 max-xl:pb-8;
     .footer-content {
-        @apply container mx-auto flex flex-row justify-between items-center px-20 pb-11;
+        @apply container mx-auto flex flex-row justify-between items-center px-20 pb-11 max-md:px-8 max-md:justify-start max-md:gap-20;
         .left-section-container {
             @apply flex flex-col justify-center items-center gap-y-[5px];
             img {
@@ -19,7 +19,7 @@
         }
     }
     .copy-right-container {
-        @apply container mx-auto text-left text-white text-sm mt-6 pt-4 px-20;
+        @apply container mx-auto text-left text-white text-sm mt-6 pt-4 px-20 max-lg:px-8;
     }
     .cookie-preferences {
         @apply absolute bottom-0 left-20 z-50 h-6 text-white text-xs font-medium cursor-pointer;
