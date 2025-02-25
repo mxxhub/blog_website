@@ -9,11 +9,11 @@
     @apply bg-white z-30 mt-[-1px];
     .section-content {
         clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 86%, 0 100%, 0 0);
-        @media (max-width: 768px) {
-            clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 95%, 0 100%, 0 0);
-        }
         @media (max-width: 1024px) {
             clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 92%, 0 100%, 0 0);
+        }
+        @media (max-width: 768px) {
+            clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 95%, 0 100%, 0 0);
         }
         @apply relative bg-[#08a885] pt-32 pb-[390px] max-md:flex-col-reverse max-md:pt-10 max-md:pb-72 max-lg:pb-80;
         .title {
@@ -32,11 +32,11 @@
     @apply bg-[#08a885] z-20 mt-[-1px];
     .section-content {
         clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 86%, 0 100%, 0 0);
-        @media (max-width: 768px) {
-            clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 97%, 0 100%, 0 0);
-        }
         @media (max-width: 1024px) {
             clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 95%, 0 100%, 0 0);
+        }
+        @media (max-width: 768px) {
+            clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 97%, 0 100%, 0 0);
         }
         @apply pt-12 pb-72 bg-white gap-20 max-md:gap-12 max-xl:pb-36;
         .section-left-container {
@@ -64,11 +64,11 @@
     @apply bg-white z-10 mt-[-1px];
     .section-content {
         clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 86%, 0 100%, 0 0);
-        @media (max-width: 768px) {
-            clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 97%, 0 100%, 0 0);
-        }
         @media (max-width: 1024px) {
             clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 95%, 0 100%, 0 0);
+        }
+        @media (max-width: 768px) {
+            clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 97%, 0 100%, 0 0);
         }
         @apply pt-28 pb-[500px] bg-[#08a885] gap-28 items-start max-md:pb-80 max-md:gap-20 max-md:items-center max-lg:gap-8 max-lg:pb-[400px];
         .section-left-container {
@@ -108,11 +108,11 @@
     @apply bg-[#0e1013] mt-[-1px];
     .section-content {
         clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 86%, 0 100%, 0 0);
-        @media (max-width: 768px) {
-            clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 97%, 0 100%, 0 0);
-        }
         @media (max-width: 1024px) {
             clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 95%, 0 100%, 0 0);
+        }
+        @media (max-width: 768px) {
+            clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 97%, 0 100%, 0 0);
         }
         @apply flex-col pt-36 pb-72 bg-white max-xl:pb-44;
         .title {
