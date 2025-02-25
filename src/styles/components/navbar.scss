@@ -1,12 +1,44 @@
 .header {
     @apply bg-[#08a885] w-full relative z-50;
     .header-container {
-       @apply container mx-auto flex justify-between items-center px-16 py-10;
+        @apply relative container mx-auto flex justify-between items-center px-16 py-10 max-lg:justify-center max-lg:py-8;
+        button {
+            @apply fixed top-10 left-5 !bg-transparent;
+        }
+        .logo-container {
+            img {
+                @apply max-lg:w-24;
+            }
+        }
     }
     .navbar {
-        @apply flex gap-x-12;
+        @apply flex gap-x-12 max-lg:hidden;
         .nav-link {
             @apply relative text-[2.1rem] font-bold font-[futura-pt] text-[#0e1013] pb-1;
+            &::after {
+                @apply content-[''] absolute w-full h-[1px] left-0 bottom-[0.1em] bg-current;
+                transform-origin: 100% 50%;
+                transform: scale3d(0, 1, 1);
+                transition: transform 0.5s;
+            }
+            &:hover::after {
+                transform-origin: 0% 50%;
+                transform: scale3d(1, 1, 1);
+            }
+            &.active::after {
+                transform-origin: 0% 50%;
+                transform: scale3d(1, 1, 1);
+            }
+        }
+    }
+}
+
+.navbar-modal {
+    @apply p-6 !bg-[#232931] text-white !max-w-full !w-full border-none flex items-center justify-center;
+    .navbar-mobile {
+        @apply flex flex-col space-y-4 px-4;
+        .nav-link {
+            @apply relative text-[2.6rem] font-bold font-[futura-pt] text-white pb-1 w-fit;
             &::after {
                 @apply content-[''] absolute w-full h-[1px] left-0 bottom-[0.1em] bg-current;
                 transform-origin: 100% 50%;
