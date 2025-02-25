@@ -4,6 +4,7 @@
 
 @import '../styles/pages/home.scss';
 @import '../styles/pages/contact.scss';
+@import '../styles/pages/legal.scss';
 
 @tailwind base;
 @tailwind components;

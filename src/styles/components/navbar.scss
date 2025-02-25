@@ -3,7 +3,7 @@
     .header-container {
         @apply relative container mx-auto flex justify-between items-center px-16 py-10 max-lg:justify-center max-lg:py-8;
         button {
-            @apply fixed top-10 left-5 !bg-transparent;
+            @apply absolute top-10 left-5 !bg-transparent;
         }
         .logo-container {
             img {
