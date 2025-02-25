@@ -1,7 +1,7 @@
 .section {
     @apply relative;
     .section-content {
-        @apply flex items-center justify-center max-md:flex-col max-xl:px-20;
+        @apply flex items-center justify-center max-md:flex-col max-sm:px-8 max-xl:px-20;
     }
 }
 
@@ -17,7 +17,7 @@
             @apply text-center whitespace-pre-wrap text-[#0e1013] text-[2.8rem] font-[futura-pt] max-w-[800px] max-md:text-[2rem] max-md:leading-[1.5] max-lg:text-[2rem] max-xl:text-[2.5rem];
         }
         .home-img {
-            @apply -ml-40 max-md:ml-0 max-md:w-1/2 max-lg:w-1/2 max-lg:-ml-20 max-xl:w-4/5 max-xl:ml-0;
+            @apply -ml-40 max-md:ml-0 max-md:w-1/2 max-lg:w-1/2 max-lg:-ml-20 max-xl:w-2/3 max-xl:ml-0;
         }
         .section-action-container {
             @apply absolute bottom-52 max-md:bottom-28 max-lg:bottom-28;
@@ -29,25 +29,23 @@
     @apply bg-[#08a885] z-20 mt-[-1px];
     .section-content {
         clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 86%, 0 100%, 0 0);
-        @apply pt-12 pb-72 bg-white gap-20;
+        @media (max-width: 1024px) {
+            clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 25% 93%, 0 100%, 0 0);
+        }
+        @apply pt-12 pb-72 bg-white gap-20 max-md:gap-12 max-xl:pb-60;
         .section-left-container {
-            .title {
-                @apply text-[4rem] text-[#0e1013] whitespace-pre-wrap font-[futura-pt]
-            }
-            .sub-title {
-                @apply text-[17px] text-[#0D2221] whitespace-pre-wrap leading-7;
-                strong {
-                    @apply text-[#0e1013]
-                }
+            @apply flex items-center justify-center;
+            img {
+                @apply max-md:w-1/2;
             }
         }
         .section-right-container {
-            @apply max-w-[600px];
+            @apply max-w-[600px] max-xl:max-w-[50%] max-md:max-w-full;
             .title {
-                @apply text-[3rem] text-[#0e1013] whitespace-pre-wrap font-[futura-pt]
+                @apply text-[3rem] text-[#0e1013] whitespace-pre-wrap font-[futura-pt] max-lg:text-[2.5rem];
             }
             .sub-title {
-                @apply text-[17px] text-[#0D2221] whitespace-pre-wrap leading-7;
+                @apply text-[17px] text-[#0D2221] whitespace-pre-wrap leading-7 max-lg:text-base;
                 strong {
                     @apply text-[#0e1013]
                 }
