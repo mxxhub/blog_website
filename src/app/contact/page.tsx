@@ -1,13 +1,16 @@
 "use client"
 
+import parse from 'html-react-parser';
+import { useEffect, useState } from "react";
+import { Toaster,toast } from "sonner";
 import { useForm } from "react-hook-form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import ErrorAlert from "@/components/ErrorAlert";
-import { useEffect } from "react";
 import { getObserver } from "@/utils/observer";
+import { supabase } from "@/lib/supabaseClient";
 
 interface FormData {
     firstName: string;
@@ -18,15 +21,50 @@ interface FormData {
 }
 
 export default function HomePage() {
+    const [title, setTitle] = useState("");
+    const [content, setContent] = useState("");
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm<FormData>();
 
-    const onSubmit = (data: FormData) => {
+    const onSubmit = async (data: FormData) => {
         console.log("Form Submitted", data);
+        try {
+            const { error } = await supabase.from("contacts").insert([data]);
+
+            if (error) {
+                console.error("Error saving form data:", error);
+                toast.error("Failed to send message. Please try again.");
+            } else {
+                toast.success("Message sent successfully!");
+            }
+        } catch (err) {
+            console.error("Unexpected error:", err);
+            toast.error("An unexpected error occurred. Please try again.");
+        }
     };
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const { data, error } = await supabase
+                .from("home")
+                .select("title, content")
+                .eq("pageType", "contact")
+                .limit(1)
+                .single();
+            
+            if (error) {
+                console.error("Error fetching data:", error);
+            } else {
+                setTitle(data?.title || "No title found");
+                setContent(data?.content || "No content found");
+            }
+        }
+
+        fetchData();
+    }, []);
 
     useEffect(() => {
         const observer = getObserver();
@@ -35,14 +73,15 @@ export default function HomePage() {
 
     return (
         <section className="section contact">
+            <Toaster position='top-right' />
             {/* Top divider */}
             <div className="divider">
                 <div className="divider-content"></div>
             </div>
             <div className='section-content'>
                 <div className='mb-8 fade-up'>
-                    <h1 className='title'>Let’s work together</h1>
-                    <p className='sub-title'>Fill out some info and we will be in touch shortly! We can't wait to hear from you!</p>
+                    <h1 className='title'>{title}</h1>
+                    {parse(content)}
                 </div>
                 <div className='form-container fade-up'>
                     <form
