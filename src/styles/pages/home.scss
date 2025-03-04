@@ -84,7 +84,7 @@
             }
         }
         .section-right-container {
-            @apply max-w-[460px] border-t-[5px] border-[#097760] max-md:w-full max-md:max-w-full max-lg:max-w-[50%];
+            @apply max-w-[460px] min-w-[460px] border-t-[5px] border-[#097760] max-md:w-full max-md:max-w-full max-md:min-w-full max-lg:max-w-[50%] max-lg:min-w-[50%];
             .accordion-item {
                 @apply border-b-[5px] border-[#097760];
                 button {

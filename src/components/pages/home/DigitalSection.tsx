@@ -12,10 +12,11 @@ export default function DigitalSection() {
     const [imageUrl, setImageUrl] = useState("/digital-potential.png");
 
     useEffect(() => {
-        async function fetchMessage() {
+        const fetchData = async () => {
             const { data, error } = await supabase
-                .from("digital")
+                .from("home")
                 .select("title, content, image")
+                .eq("pageType", "digital")
                 .limit(1)
                 .single();
             
@@ -28,7 +29,7 @@ export default function DigitalSection() {
             }
         }
 
-        fetchMessage();
+        fetchData();
     }, []);
 
     return (

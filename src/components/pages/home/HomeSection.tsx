@@ -13,10 +13,11 @@ export default function HomeSection() {
     const router = useRouter();
 
     useEffect(() => {
-        async function fetchMessage() {
+        const fetchData = async () => {
             const { data, error } = await supabase
                 .from("home")
                 .select("content, image")
+                .eq("pageType", "home")
                 .limit(1)
                 .single();
             
@@ -28,7 +29,7 @@ export default function HomeSection() {
             }
         }
 
-        fetchMessage();
+        fetchData();
     }, []);
 
     const handleContactClick = () => {

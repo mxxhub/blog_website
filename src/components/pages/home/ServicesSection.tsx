@@ -1,81 +1,97 @@
 "use client"
 
+import parse from 'html-react-parser';
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Button } from '@/components/ui/button';
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
 } from "@/components/ui/accordion";
+import { supabase } from "@/lib/supabaseClient";
 
 interface ServicesSectionProps {
     servicesRef: React.RefObject<HTMLElement | null>;
 }
 
+interface AccordionProps {
+    title: string;
+    content: string;
+}
+
 export default function ServicesSection({ servicesRef }: ServicesSectionProps) {
+    const [loading, setLoading] = useState(true);
+    const [title, setTitle] = useState("");
+    const [content, setContent] = useState("");
+    const [accordions, setAccordions] = useState<AccordionProps[]>([]);
+    const router = useRouter();
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const { data, error } = await supabase
+                .from("home")
+                .select("title, content")
+                .eq("pageType", "services")
+                .limit(1)
+                .single();
+            
+            if (error) {
+                console.error("Error fetching data:", error);
+            } else {
+                setTitle(data?.title || "No title found");
+                setContent(data?.content || "No content found");
+            }
+        }
+
+        const fetchAccordion = async () => {
+            const { data, error } = await supabase
+                .from("services-accordion")
+                .select("title, content")
+            
+            if (error) {
+                console.error("Error fetching data:", error);
+            } else {
+                setAccordions(data);
+            }
+        }
+
+        fetchData();
+        fetchAccordion();
+    }, []);
+
+    const handleContactClick = () => {
+        router.push("/contact");
+    };
+
     return (
         <section ref={servicesRef} className='section services'>
             <div className='section-content'>
                 <div className='section-left-container'>
-                    <h1 className='title fade-up'>Services</h1>
+                    <h1 className='title fade-up'>{title}</h1>
                     <div className='fade-up'>
-                        <p className='sub-title mb-4'>
-                            Harnessing advanced software development methodologies and the power of <strong>open-source</strong> technology, we deliver <strong>scalable</strong>, high-performance solutions with exceptional efficiency.
-                        </p>
-                        <p className='sub-title'>
-                            Elevate your business with our all-encompassing digital technology services designed to <strong>drive growth</strong> and <strong>innovation</strong>.
-                        </p>
+                        {parse(content)}
                     </div>
                 </div>
                 <div className='section-right-container'>
                     <Accordion type="single" collapsible className="w-full fade-up">
-                        <AccordionItem className='accordion-item' value="item-1">
-                            <AccordionTrigger>Software Development</AccordionTrigger>
-                            <AccordionContent>
-                                <p className='mb-3'>
-                                    We develop custom software solutions to optimize your business operations, encompassing web and mobile applications, as well as robust backend systems.
-                                </p>
-                                <p>
-                                    Leveraging our expertise in machine learning and AI, we deliver intelligent, innovative solutions that drive efficiency and growth for your projects.
-                                </p>
-                            </AccordionContent>
-                        </AccordionItem>
-                        <AccordionItem className='accordion-item' value="item-2">
-                            <AccordionTrigger>Custom E-commerce Solutions</AccordionTrigger>
-                            <AccordionContent>
-                                <p>
-                                    Tailored online store development, including shopping cart integration, payment processing, and inventory management to enhance user experience and increase sales.
-                                </p>
-                            </AccordionContent>
-                        </AccordionItem>
-                        <AccordionItem className='accordion-item' value="item-3">
-                            <AccordionTrigger>Digital Strategy Consulting</AccordionTrigger>
-                            <AccordionContent>
-                                <p>
-                                    Comprehensive analysis and strategy development to identify growth opportunities and optimize digital operations for businesses.
-                                </p>
-                            </AccordionContent>
-                        </AccordionItem>
-                        <AccordionItem className='accordion-item' value="item-4">
-                            <AccordionTrigger>IT Consulting Services</AccordionTrigger>
-                            <AccordionContent>
-                                <p>
-                                    Expert advice on IT infrastructure, cloud services, cybersecurity, and data management to improve business efficiency and security.
-                                </p>
-                            </AccordionContent>
-                        </AccordionItem>
-                        <AccordionItem className='accordion-item' value="item-5">
-                            <AccordionTrigger>Support & Maintenance</AccordionTrigger>
-                            <AccordionContent>
-                                <p>
-                                    Ongoing support and maintenance services to ensure digital tools and platforms remain up-to-date, secure, and efficient.
-                                </p>
-                            </AccordionContent>
-                        </AccordionItem>
+                        {
+                            accordions.map((accordion, index) => (
+                                <AccordionItem className='accordion-item' key={index} value={`item-${index + 1}`}>
+                                    <AccordionTrigger>
+                                        {accordion.title}
+                                    </AccordionTrigger>
+                                    <AccordionContent>
+                                        {parse(accordion.content)}
+                                    </AccordionContent>
+                                </AccordionItem>
+                            ))
+                        }
                     </Accordion>
                 </div>
                 <div className='section-action-container fade-up'>
-                    <Button className='default-btn get-started-btn'>
+                    <Button className='default-btn get-started-btn' onClick={handleContactClick}>
                         <span>
                             Get Started
                         </span>
