@@ -1,5 +1,6 @@
 "use client"
 
+import parse from 'html-react-parser';
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from 'next/image';
@@ -20,9 +21,9 @@ export default function HomeSection() {
                 .single();
             
             if (error) {
-                console.error("Error fetching message:", error);
+                console.error("Error fetching data:", error);
             } else {
-                setContent(data?.content || "No message found");
+                setContent(data?.content || "No content found");
                 setImageUrl(data?.image || "No image found");
             }
         }
@@ -37,9 +38,11 @@ export default function HomeSection() {
     return (
         <section className="section home">
             <div className='section-content'>
-                <h1 className="title fade-up" dangerouslySetInnerHTML={{ __html: content }}></h1>
+                <h1 className="title fade-up">
+                    {parse(content)}
+                </h1>
                 <Image
-                    src={`${imageUrl}`}
+                    src={imageUrl}
                     alt="Blog home"
                     width={695}
                     height={405}
