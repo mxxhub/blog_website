@@ -19,7 +19,6 @@ export default function HomeSection() {
                 .limit(1)
                 .single();
             
-            console.log('data: ', data);
             if (error) {
                 console.error("Error fetching message:", error);
             } else {
@@ -44,6 +43,7 @@ export default function HomeSection() {
                     alt="Blog home"
                     width={695}
                     height={405}
+                    unoptimized
                     className='home-img fade-up'
                 />
                 <div className='section-action-container fade-up'>
