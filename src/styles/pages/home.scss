@@ -119,12 +119,9 @@
             @apply text-center whitespace-pre-wrap text-[#0e1013] !text-[2.2rem] font-[futura-pt];
         }
         .section-item-list {
-            @apply flex flex-row flex-wrap max-w-[1400px] px-24 justify-center gap-x-16 gap-y-12 mt-20 mb-14 max-xl:px-0 max-xl:gap-x-8 max-xl:mt-16 max-xl:gap-y-8;
+            @apply flex flex-row flex-wrap max-w-[1400px] justify-center gap-x-16 gap-y-12 mt-20 mb-14 max-xl:px-0 max-xl:gap-x-8 max-xl:mt-16 max-xl:gap-y-8;
             .section-item {
                 @apply flex items-center justify-center;
-                &:nth-child(7) {
-                    @apply -ml-28 max-2xl:ml-0;
-                }
             }
         }
     }

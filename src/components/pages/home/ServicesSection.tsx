@@ -47,7 +47,7 @@ export default function ServicesSection({ servicesRef }: ServicesSectionProps) {
 
         const fetchAccordion = async () => {
             const { data, error } = await supabase
-                .from("services-accordion")
+                .from("services_accordion")
                 .select("title, content")
             
             if (error) {
