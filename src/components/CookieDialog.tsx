@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -8,14 +8,14 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
+} from "@/components/ui/dialog";
 import { Switch } from "./ui/switch";
 import { useState } from "react";
 
 export function CookiePreferences() {
   const [performanceAnalytics, setPerformanceAnalytics] = useState(false);
   const [advertising, setAdvertising] = useState(true);
-  
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -32,14 +32,16 @@ export function CookiePreferences() {
               <h3 className="item-title">Necessary</h3>
               <p className="item-text">
                 Required to enable core site functionality and to remember user
-                preferences and choices, such as language preferences or customized
-                settings.
+                preferences and choices, such as language preferences or
+                customized settings.
               </p>
             </div>
-            <span className="text-white text-xs whitespace-nowrap">Always on</span>
+            <span className="text-white text-xs whitespace-nowrap">
+              Always on
+            </span>
           </div>
 
-          <hr/>
+          <hr />
 
           {/* Performance And Analytics */}
           <div className="content-item">
@@ -52,7 +54,7 @@ export function CookiePreferences() {
               </p>
             </div>
             <div className="action-container">
-              <p>{performanceAnalytics ? 'On': 'Off'}</p>
+              <p>{performanceAnalytics ? "On" : "Off"}</p>
               <Switch
                 className="data-[state=checked]:bg-[#08a885]"
                 checked={performanceAnalytics}
@@ -61,20 +63,20 @@ export function CookiePreferences() {
             </div>
           </div>
 
-          <hr/>
+          <hr />
 
           {/* Advertising */}
           <div className="content-item">
             <div>
               <h3 className="item-title">Advertising</h3>
               <p className="item-text">
-                These cookies are used by advertising companies to serve ads that
-                are relevant to your interests.
+                These cookies are used by advertising companies to serve ads
+                that are relevant to your interests.
               </p>
             </div>
             <div className="action-container">
-              <p>{advertising ? 'On': 'Off'}</p>
-              <Switch 
+              <p>{advertising ? "On" : "Off"}</p>
+              <Switch
                 className="data-[state=checked]:bg-[#08a885]"
                 checked={advertising}
                 onCheckedChange={setAdvertising}
@@ -83,9 +85,11 @@ export function CookiePreferences() {
           </div>
         </div>
         <DialogFooter>
-          <Button type="submit" className="submit-btn">Save Preferences</Button>
+          <Button type="submit" className="submit-btn">
+            Save Preferences
+          </Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

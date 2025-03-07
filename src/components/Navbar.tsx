@@ -1,24 +1,26 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { Menu } from 'lucide-react';
+import { Menu } from "lucide-react";
 
 export default function Navbar() {
-  const [pathname, setPathName] = useState('');
+  const [pathname, setPathName] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const path = usePathname();
 
   const routes = [
-    { name: 'Home', path: '/home' },
-    { name: 'Services', path: '/home#services' },
-    { name: 'Contact', path: '/contact' },
-    { name: 'Accessibility', path: '/accessibility' },
-    { name: 'Legal', path: '/legal' },
+    { name: "Home", path: "/home" },
+    { name: "Services", path: "/home#services" },
+    { name: "Contact", path: "/contact" },
+    { name: "Signup", path: "/signup" },
+    { name: "Signin", path: "/signin" },
+    // { name: "Accessibility", path: "/accessibility" },
+    // { name: "Legal", path: "/legal" },
   ];
 
   const handleNavbarClick = (path: string) => {
@@ -43,8 +45,16 @@ export default function Navbar() {
           <SheetContent side="right" className="navbar-modal">
             <div className="navbar-mobile">
               {routes.map(({ name, path }) => (
-                <Link key={path} href={path} target={path === '/home#services' ? '_blank': '_self'} onClick={() => handleNavbarClick(path)} passHref>
-                  <p className={`nav-link ${pathname === path ? 'active' : ''}`}>
+                <Link
+                  key={path}
+                  href={path}
+                  target={path === "/home#services" ? "_blank" : "_self"}
+                  onClick={() => handleNavbarClick(path)}
+                  passHref
+                >
+                  <p
+                    className={`nav-link ${pathname === path ? "active" : ""}`}
+                  >
                     {name}
                   </p>
                 </Link>
@@ -54,17 +64,23 @@ export default function Navbar() {
         </Sheet>
 
         {/* Logo */}
-        <div className='logo-container fade-up'>
-          <Link href={'/home'} passHref>
+        <div className="logo-container fade-up">
+          <Link href={"/home"} passHref>
             <Image src="/logo.png" alt="logo" width={137} height={88} />
           </Link>
         </div>
 
         {/* Desktop Navbar */}
         <nav className="navbar fade-up">
-          {routes.slice(0, 3).map(({ name, path }) => (
-            <Link key={path} href={path} target={path === '/home#services' ? '_blank': '_self'} onClick={() => handleNavbarClick(path)} passHref>
-              <p className={`nav-link ${pathname === path ? 'active' : ''}`}>
+          {routes.slice(0, 5).map(({ name, path }) => (
+            <Link
+              key={path}
+              href={path}
+              target={path === "/home#services" ? "_blank" : "_self"}
+              onClick={() => handleNavbarClick(path)}
+              passHref
+            >
+              <p className={`nav-link ${pathname === path ? "active" : ""}`}>
                 {name}
               </p>
             </Link>

@@ -9,7 +9,12 @@ export default function Footer() {
       <div className="footer-content">
         {/* Left Section */}
         <div className="left-section-container fade-up">
-          <Image src="/footer-logo.png" alt="home img" width={120} height={60} />
+          <Image
+            src="/footer-logo.png"
+            alt="home img"
+            width={120}
+            height={60}
+          />
           <p className="mt-2">ADK Interactive, LLC</p>
           <p>418 Broadway #4332</p>
           <p>Albany, NY 12207</p>
@@ -44,7 +49,7 @@ export default function Footer() {
 
       {/* Cookie Preferences */}
       <div className="cookie-preferences fade-up">
-        <CookiePreferences /> 
+        <CookiePreferences />
       </div>
 
       {/* Scroll Top */}
