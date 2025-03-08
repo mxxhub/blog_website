@@ -15,7 +15,7 @@ export default function Footer() {
             width={120}
             height={60}
           />
-          <p className="mt-2">ADK Interactive, LLC</p>
+          <p className="mt-2">Chatting Interactive, LLC</p>
           <p>418 Broadway #4332</p>
           <p>Albany, NY 12207</p>
         </div>
@@ -44,7 +44,7 @@ export default function Footer() {
 
       {/* Bottom Section */}
       <div className="copy-right-container fade-up">
-        <p>© 2024 ADK Interactive, LLC. All rights reserved.</p>
+        <p>© 2024 Chatting Interactive, LLC. All right.</p>
       </div>
 
       {/* Cookie Preferences */}

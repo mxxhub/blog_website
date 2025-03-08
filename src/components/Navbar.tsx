@@ -66,7 +66,7 @@ export default function Navbar() {
         {/* Logo */}
         <div className="logo-container fade-up">
           <Link href={"/home"} passHref>
-            <Image src="/logo.png" alt="logo" width={137} height={88} />
+            <Image src="/logo1.png" alt="logo" width={137} height={88} />
           </Link>
         </div>
 
