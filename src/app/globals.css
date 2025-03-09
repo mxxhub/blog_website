@@ -1,17 +1,102 @@
-@import '../styles/components/navbar.scss';
-@import '../styles/components/footer.scss';
-@import '../styles/components/component.scss';
+@import "../styles/components/navbar.scss";
+@import "../styles/components/footer.scss";
+@import "../styles/components/component.scss";
 
-@import '../styles/pages/home.scss';
-@import '../styles/pages/contact.scss';
-@import '../styles/pages/legal.scss';
+@import "../styles/pages/home.scss";
+@import "../styles/pages/contact.scss";
+@import "../styles/pages/legal.scss";
+@import "../styles/pages/chatting.scss";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/28fd69/00000000000000007758da2b/30/l?subset_id=2&fvd=n5&v=3) format("woff2"),url(https://use.typekit.net/af/28fd69/00000000000000007758da2b/30/d?subset_id=2&fvd=n5&v=3) format("woff"),url(https://use.typekit.net/af/28fd69/00000000000000007758da2b/30/a?subset_id=2&fvd=n5&v=3) format("opentype");font-weight:500;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/965528/000000000000000077586b56/30/l?subset_id=2&fvd=n6&v=3) format("woff2"),url(https://use.typekit.net/af/965528/000000000000000077586b56/30/d?subset_id=2&fvd=n6&v=3) format("woff"),url(https://use.typekit.net/af/965528/000000000000000077586b56/30/a?subset_id=2&fvd=n6&v=3) format("opentype");font-weight:600;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/afd07f/000000000000000077586b60/30/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/afd07f/000000000000000077586b60/30/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/afd07f/000000000000000077586b60/30/a?subset_id=2&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/1dbbe3/00000000000000007758da2c/30/l?subset_id=2&fvd=i5&v=3) format("woff2"),url(https://use.typekit.net/af/1dbbe3/00000000000000007758da2c/30/d?subset_id=2&fvd=i5&v=3) format("woff"),url(https://use.typekit.net/af/1dbbe3/00000000000000007758da2c/30/a?subset_id=2&fvd=i5&v=3) format("opentype");font-weight:500;font-style:italic;font-stretch:normal;font-display:auto;}@font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/0efeae/000000000000000077586b5a/30/l?subset_id=2&fvd=i7&v=3) format("woff2"),url(https://use.typekit.net/af/0efeae/000000000000000077586b5a/30/d?subset_id=2&fvd=i7&v=3) format("woff"),url(https://use.typekit.net/af/0efeae/000000000000000077586b5a/30/a?subset_id=2&fvd=i7&v=3) format("opentype");font-weight:700;font-style:italic;font-stretch:normal;font-display:auto;}
-@font-face { font-family: 'squarespace-ui-font'; src:url('http://assets.squarespace.com/universal/fonts/squarespace-ui-font.eot'); src:url('http://assets.squarespace.com/universal/fonts/squarespace-ui-font.eot?#iefix') format('embedded-opentype'), url('http://assets.squarespace.com/universal/fonts/squarespace-ui-font.svg#squarespace-ui-font') format('svg'), url('http://assets.squarespace.com/universal/fonts/squarespace-ui-font.woff') format('woff'), url('http://assets.squarespace.com/universal/fonts/squarespace-ui-font.ttf') format('truetype'); font-weight: normal; font-style: normal; } .sqs-ui-font-family { font-family: 'squarespace-ui-font'; font-style: normal; speak: none; font-weight: normal; -webkit-font-smoothing: antialiased; }
+@font-face {
+  font-family: futura-pt;
+  src: url(https://use.typekit.net/af/28fd69/00000000000000007758da2b/30/l?subset_id=2&fvd=n5&v=3)
+      format("woff2"),
+    url(https://use.typekit.net/af/28fd69/00000000000000007758da2b/30/d?subset_id=2&fvd=n5&v=3)
+      format("woff"),
+    url(https://use.typekit.net/af/28fd69/00000000000000007758da2b/30/a?subset_id=2&fvd=n5&v=3)
+      format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: auto;
+}
+@font-face {
+  font-family: futura-pt;
+  src: url(https://use.typekit.net/af/965528/000000000000000077586b56/30/l?subset_id=2&fvd=n6&v=3)
+      format("woff2"),
+    url(https://use.typekit.net/af/965528/000000000000000077586b56/30/d?subset_id=2&fvd=n6&v=3)
+      format("woff"),
+    url(https://use.typekit.net/af/965528/000000000000000077586b56/30/a?subset_id=2&fvd=n6&v=3)
+      format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: auto;
+}
+@font-face {
+  font-family: futura-pt;
+  src: url(https://use.typekit.net/af/afd07f/000000000000000077586b60/30/l?subset_id=2&fvd=n7&v=3)
+      format("woff2"),
+    url(https://use.typekit.net/af/afd07f/000000000000000077586b60/30/d?subset_id=2&fvd=n7&v=3)
+      format("woff"),
+    url(https://use.typekit.net/af/afd07f/000000000000000077586b60/30/a?subset_id=2&fvd=n7&v=3)
+      format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: auto;
+}
+@font-face {
+  font-family: futura-pt;
+  src: url(https://use.typekit.net/af/1dbbe3/00000000000000007758da2c/30/l?subset_id=2&fvd=i5&v=3)
+      format("woff2"),
+    url(https://use.typekit.net/af/1dbbe3/00000000000000007758da2c/30/d?subset_id=2&fvd=i5&v=3)
+      format("woff"),
+    url(https://use.typekit.net/af/1dbbe3/00000000000000007758da2c/30/a?subset_id=2&fvd=i5&v=3)
+      format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: auto;
+}
+@font-face {
+  font-family: futura-pt;
+  src: url(https://use.typekit.net/af/0efeae/000000000000000077586b5a/30/l?subset_id=2&fvd=i7&v=3)
+      format("woff2"),
+    url(https://use.typekit.net/af/0efeae/000000000000000077586b5a/30/d?subset_id=2&fvd=i7&v=3)
+      format("woff"),
+    url(https://use.typekit.net/af/0efeae/000000000000000077586b5a/30/a?subset_id=2&fvd=i7&v=3)
+      format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: auto;
+}
+@font-face {
+  font-family: "squarespace-ui-font";
+  src: url("http://assets.squarespace.com/universal/fonts/squarespace-ui-font.eot");
+  src: url("http://assets.squarespace.com/universal/fonts/squarespace-ui-font.eot?#iefix")
+      format("embedded-opentype"),
+    url("http://assets.squarespace.com/universal/fonts/squarespace-ui-font.svg#squarespace-ui-font")
+      format("svg"),
+    url("http://assets.squarespace.com/universal/fonts/squarespace-ui-font.woff")
+      format("woff"),
+    url("http://assets.squarespace.com/universal/fonts/squarespace-ui-font.ttf")
+      format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+.sqs-ui-font-family {
+  font-family: "squarespace-ui-font";
+  font-style: normal;
+  speak: none;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+}
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -82,10 +167,11 @@ body {
   }
 }
 
-
-
 @layer base {
   * {
-    @apply border-border outline-ring/50;}
+    @apply border-border outline-ring/50;
+  }
   body {
-    @apply bg-background text-foreground;}}
+    @apply bg-background text-foreground;
+  }
+}

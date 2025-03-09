@@ -12,8 +12,6 @@ import ErrorAlert from "@/components/ErrorAlert";
 import { getObserver } from "@/utils/observer";
 import { supabase } from "@/lib/supabaseClient";
 
-console.log(supabase);
-
 interface FormData {
   firstName: string;
   lastName: string;

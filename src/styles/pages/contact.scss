@@ -1,7 +1,8 @@
 .contact {
   @apply bg-[#0e1013] mt-[-1px];
   .divider {
-    @apply bg-white w-full h-32 max-lg:h-24;
+    @apply bg-gray-100  w-full h-32 max-lg:h-24 relative; /* Red background */
+
     .divider-content {
       clip-path: polygon(
         50% 0%,
